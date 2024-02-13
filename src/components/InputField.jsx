@@ -1,6 +1,16 @@
+import { useState } from "react";
+
 const InputField = (props) => {
+    const [inputValue, setInputValue] = useState(0);
+
     const fieldName = props.fieldName;
     const fieldUnit = props.fieldUnit;
+    const coffeeBeans = props.coffeeBeans
+
+    const handleInputValue = e => {
+        setInputValue(e.target.value);
+        console.log(e.target.value);
+    };
 
     return (
         <div className="inputField">
@@ -13,7 +23,11 @@ const InputField = (props) => {
                 minlength="1"
                 maxlength="10"
                 size="10"
+                defaultValue={ inputValue }
+                value={ inputValue }
+                onChange={ handleInputValue }
             />
+
             <div className="fieldUnit">
                 { fieldUnit }
             </div>
