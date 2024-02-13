@@ -1,4 +1,4 @@
-import InputField from "../InputField";
+import InputField from "./InputField/InputField";
 
 const Ratio = props => {
     return (
@@ -6,7 +6,7 @@ const Ratio = props => {
             <InputField
                 fieldName="Ratio"
                 fieldUnit=": 1"
-                inputFieldValue={ props.value }
+                value={ props.value }
                 onValueChange={ props.onChange }
             />
         </div>

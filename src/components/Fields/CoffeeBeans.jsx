@@ -1,4 +1,4 @@
-import InputField from "../InputField";
+import InputField from "./InputField/InputField";
 
 const CoffeeBeans = props => {
     return (
@@ -6,7 +6,7 @@ const CoffeeBeans = props => {
             <InputField
                 fieldName="Coffee beans"
                 fieldUnit="g"
-                inputFieldValue={ props.value }
+                value={ props.value }
                 onValueChange={ props.onChange }
             />
         </div>

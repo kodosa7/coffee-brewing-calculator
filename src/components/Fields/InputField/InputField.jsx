@@ -9,12 +9,13 @@ const InputField = props => {
 
     return (
         <div className="inputField">
-            <label for="name">{ fieldName }</label>
+            <label htmlFor="field">{ fieldName }</label>
             <input
                 type="number"
-                id="name"
-                name="name"
+                id="field"
+                name="field"
                 required
+                defaultValue="0"
                 value={ props.inputFieldValue }
                 onChange={ handleInputValue }
             />

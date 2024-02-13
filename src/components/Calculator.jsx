@@ -13,7 +13,6 @@ const Calculator = () => {
 
     const calculateCoffeeBeans = value => {
         setCoffeeBeans(value);
-        // setCoffeeBeans(prev => prev * 123);
         console.log("calculateCoffeeBeans", coffeeBeans);
     };
 
