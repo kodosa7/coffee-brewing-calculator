@@ -1,16 +1,13 @@
-import { useState } from "react";
 import InputField from "../InputField";
 
-const Water = () => {
-    const [water, setWater] = useState(1);
-
+const Water = props => {
     return (
         <div className="inputFieldWrapper">
             <InputField
                 fieldName="Water"
                 fieldUnit="ml"
-                inputFieldValue={ water }
-                onValueChange={ setWater }
+                inputFieldValue={ props.value }
+                onValueChange={ props.onChange }
             />
         </div>
     );
