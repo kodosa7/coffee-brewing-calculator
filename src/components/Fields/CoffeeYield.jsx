@@ -2,20 +2,16 @@ import { useState } from "react";
 import InputField from "../InputField";
 
 const CoffeeYield = () => {
-    const [coffeeYield, setCoffeeYield] = useState(8);
-
-    const fieldText = { "Coffee yield": "ml" }
+    const [coffeeYield, setCoffeeYield] = useState(1);
 
     return (
         <div className="inputFieldWrapper">
-            {Object.entries(fieldText)
-                .map(item => (
-                <InputField
-                    fieldName={ item[0] }
-                    fieldUnit={ item[1] }
-                    inputFieldValue={ coffeeYield }
-                />
-            ))}
+            <InputField
+                fieldName="Coffee yield"
+                fieldUnit="ml"
+                inputFieldValue={ coffeeYield }
+                onValueChange={ setCoffeeYield }
+            />
         </div>
     );
 };
