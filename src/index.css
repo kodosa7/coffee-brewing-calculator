@@ -1,0 +1,16 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    font-family: "Segoe UI Semibold", Arial, Helvetica, sans-serif;
+    color: #212529;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+main {
+    margin: 0 4rem;
+}
