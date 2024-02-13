@@ -1,18 +1,16 @@
 import { useState } from "react";
-import CoffeeBeans from "./Fields/CoffeeBeans";
-import Water from "./Fields/Water";
 
 const InputField = (props) => {
-    const [inputValue, setInputValue] = useState(0);
-
+    
     const fieldName = props.fieldName;
     const fieldUnit = props.fieldUnit;
+    const [inputFieldValue, setInputFieldValue] = useState(props.inputFieldValue);
 
-    const inputFieldValue = props.inputFieldValue
+    const [inputValue, setInputValue] = useState(inputFieldValue);
 
     const handleInputValue = e => {
         setInputValue(e.target.value);
-        console.log(e.target.value);
+        setInputFieldValue(prevValue => prevValue + 1)
     };
 
     return (
@@ -23,12 +21,9 @@ const InputField = (props) => {
                 id="name"
                 name="name"
                 required
-                minlength="1"
-                maxlength="10"
-                size="10"
-                defaultValue={ inputFieldValue }
+                // defaultValue={ inputFieldValue }
                 value={ inputFieldValue }
-                onChange={ handleInputValue }
+                onInput={ handleInputValue }
             />
 
             <div className="fieldUnit">
