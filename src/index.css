@@ -14,3 +14,21 @@ h1 {
 main {
     margin: 0 4rem;
 }
+
+.inputFieldWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.inputField {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+}
+
+.fieldUnit {
+  padding: .5rem;
+  background-color: #e9ecef;
+}
