@@ -10,8 +10,15 @@ const InputField = (props) => {
 
     const handleInputValue = e => {
         setInputValue(e.target.value);
-        setInputFieldValue(prevValue => prevValue + 1)
     };
+
+    const handleIncrement = () => {
+        setInputFieldValue(prevValue => prevValue + 1)
+    }
+
+    const handleDecrement = () => {
+        setInputFieldValue(prevValue => prevValue - 1)
+    }
 
     return (
         <div className="inputField">
@@ -21,10 +28,11 @@ const InputField = (props) => {
                 id="name"
                 name="name"
                 required
-                // defaultValue={ inputFieldValue }
                 value={ inputFieldValue }
                 onInput={ handleInputValue }
             />
+            <button onClick={ handleIncrement }>+</button>
+            <button onClick={ handleDecrement }>-</button>
 
             <div className="fieldUnit">
                 { fieldUnit }
