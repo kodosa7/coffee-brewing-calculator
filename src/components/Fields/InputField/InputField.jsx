@@ -1,4 +1,4 @@
-const InputField = props => {
+const InputField = (props) => {
     
     const fieldName = props.fieldName;
     const fieldUnit = props.fieldUnit;
@@ -15,8 +15,8 @@ const InputField = props => {
                 id="field"
                 name="field"
                 required
-                defaultValue="0"
-                value={ props.inputFieldValue }
+                // defaultValue="0"
+                value={ props.value }
                 onChange={ handleInputValue }
             />
 

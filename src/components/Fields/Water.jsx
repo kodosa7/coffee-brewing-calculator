@@ -1,6 +1,6 @@
 import InputField from "./InputField/InputField";
 
-const Water = props => {
+const Water = (props) => {
     return (
         <div className="inputFieldWrapper">
             <InputField

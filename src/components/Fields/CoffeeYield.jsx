@@ -1,6 +1,6 @@
 import InputField from "./InputField/InputField";
 
-const CoffeeYield = props => {
+const CoffeeYield = (props) => {
     return (
         <div className="inputFieldWrapper">
             <InputField

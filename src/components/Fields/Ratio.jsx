@@ -1,6 +1,6 @@
 import InputField from "./InputField/InputField";
 
-const Ratio = props => {
+const Ratio = (props) => {
     return (
         <div className="inputFieldWrapper">
             <InputField
