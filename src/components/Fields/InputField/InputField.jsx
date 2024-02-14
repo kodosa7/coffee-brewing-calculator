@@ -21,7 +21,7 @@ const InputField = (props) => {
                     value={ props.value }
                     onChange={ handleInputValue }
                 />
-                <div className="fieldUnit">
+                <div className="inputField__unit">
                     { fieldUnit }
                 </div>
             </div>
