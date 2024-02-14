@@ -12,38 +12,34 @@ const Calculator = () => {
     const [ratio, setRatio] = useState(16);
 
     const calculateCoffeeBeans = value => {
-        if (value >= 5 && value <= 100) {
+        if (value >= 0 && value <= 100) {
             setCoffeeBeans(value);
-            console.log("calculateCoffeeBeans", coffeeBeans);
-            setWater((value * ratio).toFixed(2));
-            setCoffeeYield(Math.floor(water * .9));
+            setWater(Math.round((value * ratio) * 100) / 100);
+            setCoffeeYield(Math.round((water * .9) * 100) / 100);
         }
     };
 
     const calculateWater = value => {
-        if (value >= 10 && value <= 2500) {
+        if (value >= 0 && value <= 2500) {
             setWater(value);
-            console.log("calculateWater", water);
-            setCoffeeYield((water * .9).toFixed(2));
-            setCoffeeBeans(Math.floor(water / ratio));
+            setCoffeeYield(Math.round((water * .9) * 100) / 100);
+            setCoffeeBeans(Math.round((water / ratio) * 100) / 100);
         }
     };
 
     const calculateRatio = value => {
-        if (value >= .5 && value <= 50) {
+        if (value >= 0 && value <= 50) {
             setRatio(value);
-            console.log("calculateRatio", ratio);
-            setWater((value * ratio).toFixed(2));
-            setCoffeeYield(Math.floor(water * .9));
+            setWater(Math.round((value * ratio) * 100) / 100);
+            setCoffeeYield(Math.round((water * .9) * 100) / 100);
         }
     };
 
     const calculateCoffeeYield = value => {
-        if (value >= 10 && value <= 2500) {
+        if (value >= 0 && value <= 2500) {
             setCoffeeYield(value);
-            console.log("calculateCoffeeYield", coffeeYield);
-            setWater((coffeeYield / .9).toFixed(2));
-            setCoffeeBeans(Math.floor(water / ratio));
+            setWater(Math.round((coffeeYield / .9) * 100) / 100);
+            setCoffeeBeans(Math.round((water / ratio) * 100) / 100);
         }
     };
 

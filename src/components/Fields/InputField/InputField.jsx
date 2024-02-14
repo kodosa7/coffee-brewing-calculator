@@ -14,12 +14,12 @@ const InputField = (props) => {
             </div>
             <div className="inputField__field">
                 <input
-                        type="number"
-                        id="field"
-                        name="field"
-                        required
-                        value={ props.value }
-                        onChange={ handleInputValue }
+                    type="number"
+                    id="field"
+                    name="field"
+                    required
+                    value={ props.value }
+                    onChange={ handleInputValue }
                 />
                 <div className="fieldUnit">
                     { fieldUnit }
