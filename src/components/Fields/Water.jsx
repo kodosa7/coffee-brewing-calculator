@@ -2,7 +2,7 @@ import InputField from "./InputField/InputField";
 
 const Water = (props) => {
     return (
-        <div className="inputFieldWrapper">
+        <div className="inputField">
             <InputField
                 fieldName="Water"
                 fieldUnit="ml"

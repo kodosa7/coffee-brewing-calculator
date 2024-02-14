@@ -15,28 +15,43 @@ main {
     margin: 0 4rem;
 }
 
+input {
+    padding: .5rem;
+    border: 1px solid green;
+    border-radius: 5px 0 0 5px;
+}
+
 .inputFieldWrapper {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
 }
 
 .inputField {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: .5rem;
 }
 
-.fieldUnit {
-  padding: .5rem;
-  background-color: #e9ecef;
+.inputField__around {
+    /* border: 2px solid red; */
 }
 
-/* input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; 
-} */
+.inputField__label {
+    /* border: 2px solid red; */
+}
+
+.inputField__field {
+    display: flex;
+    flex-direction: row;
+}
+
+.fieldUnit {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: #e9ecef;
+    border-top: 1px solid ;
+    border-right: 1px solid ;
+    border-bottom: 1px solid ;
+    border-radius: 0 5px 5px 0;
+}
