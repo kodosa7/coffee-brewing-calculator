@@ -1,23 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Timer = () => {
-    const [time, setTime] = useState(0);
+    const [time, setTime] = useState(600);
+    const [isRunning, setIsRunning] = useState(false);
+    const [endReached, setEndReached] = useState(false);
     
+
+    useEffect(() => {
+        let timer;
+        if (isRunning && time > -1) {
+                timer = setInterval(() => {
+                    setTime((prevTime) => prevTime - 1);
+            }, 1000);
+        } else if (time === 1) {
+            setEndReached(true);
+        };
+
+        return () => {
+            clearInterval(timer);
+        };
+    }, [isRunning, time]);
+
+
     const handleTime = (e) => {
-        setTime(value);
+        setTime(time);
     }
 
     const handleStartButton = () => {
         console.log("Start button pressed");
+        setIsRunning(true);
     }
 
     const handleStopButton = () => {
         console.log("Stop button pressed");
+        setIsRunning(false);
     }
 
     const handleResetButton = () => {
         console.log("Reset button pressed");
+        setIsRunning(false);
+        setTime(600);
     }
+
     return (
         <div className="inputField__around">
             <div className="inputField__label">
@@ -36,7 +60,9 @@ const Timer = () => {
                     min
                 </div>
                 <div>
-                    Timer view
+                    {
+                        `${String(Math.floor(time / 60))}:${String(Math.floor(time % 60)).padStart(2, '0')}`
+                    }
                 </div>
 
                 <div>
@@ -61,7 +87,7 @@ const Timer = () => {
                 </div>
                 
                 <div>
-                    Progress bar view
+                    Progress bar
                 </div>
 
             </div>
