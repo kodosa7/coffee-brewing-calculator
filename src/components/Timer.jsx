@@ -3,17 +3,15 @@ import { useState, useEffect } from "react";
 const Timer = () => {
     const [time, setTime] = useState(600);
     const [isRunning, setIsRunning] = useState(false);
-    const [endReached, setEndReached] = useState(false);
+    const [countdown, setCountdown] = useState(10);
     
 
     useEffect(() => {
         let timer;
-        if (isRunning && time > -1) {
+        if (isRunning && time > 0) {
                 timer = setInterval(() => {
                     setTime((prevTime) => prevTime - 1);
             }, 1000);
-        } else if (time === 1) {
-            setEndReached(true);
         };
 
         return () => {
@@ -22,8 +20,15 @@ const Timer = () => {
     }, [isRunning, time]);
 
 
-    const handleTime = (e) => {
-        setTime(time);
+    const handleCountdown = (e) => {
+        if (e.target.value < 0) {
+            e.target.value = 0
+        }
+
+        setCountdown(e.target.value);
+        setIsRunning(false);
+        setTime(e.target.value * 60);
+        console.log(countdown, time)
     }
 
     const handleStartButton = () => {
@@ -39,7 +44,8 @@ const Timer = () => {
     const handleResetButton = () => {
         console.log("Reset button pressed");
         setIsRunning(false);
-        setTime(600);
+        setTime(countdown * 60);
+        setCountdown()
     }
 
     return (
@@ -52,9 +58,10 @@ const Timer = () => {
                     type="number"
                     id="timer"
                     name="timer"
+                    step=".5"
                     required
-                    value={ time }
-                    onChange={ handleTime }
+                    value={ countdown }
+                    onChange={ handleCountdown }
                 />
                 <div className="inputField__unit">
                     min
@@ -87,7 +94,14 @@ const Timer = () => {
                 </div>
                 
                 <div>
-                    Progress bar
+                    <progress
+                        id="progress-bar"
+                        // max="0"
+                        value={ time }
+                        onChange={e => setCountdown(e.target.value)}
+                    >
+                        
+                    </progress>
                 </div>
 
             </div>
