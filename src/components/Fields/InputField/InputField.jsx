@@ -8,11 +8,11 @@ const InputField = (props) => {
     };
 
     return (
-        <div className="inputField__around">
-            <div className="inputField__label">
+        <div className="">
+            <div className="">
                 <label htmlFor="field">{ fieldName }</label>
             </div>
-            <div className="inputField__field">
+            <div className="">
                 <input
                     type="number"
                     id="field"
@@ -21,7 +21,7 @@ const InputField = (props) => {
                     value={ props.value }
                     onChange={ handleInputValue }
                 />
-                <div className="inputField__unit">
+                <div className="">
                     { fieldUnit }
                 </div>
             </div>

@@ -48,12 +48,12 @@ const Timer = () => {
     };
 
     return (
-        <div className="timer__wrapper">
-                <div className="inputField__label">
+        <div className="">
+            <div className="input">
+                <div className="">
                     <label htmlFor="field">Timer</label>
                 </div>
-            <div className="inputField">
-                <div className="inputField__field">
+                <div className="">
                     <input
                         type="number"
                         id="timer"
@@ -63,21 +63,21 @@ const Timer = () => {
                         value={ countdown }
                         onChange={ handleCountdown }
                     />
-                    <div className="inputField__unit">
+                    <div className="">
                         min
                     </div>
                 </div>
             </div>
-            <div className="inputField">
-                <div className="time_buttons__wrapper">
+            <div className="timer">
+                <div className="">
 
-                    <div className="time__wrapper">
+                    <div className="">
                         {
                             `${String(Math.floor(time / 60))}:${String(Math.floor(time % 60)).padStart(2, '0')}`
                         }
                     </div>
 
-                    <div className="buttons__wrapper">
+                    <div className="">
                         <button
                             className="start"
                             onClick={ handleStartButton }
@@ -99,7 +99,7 @@ const Timer = () => {
                     </div>
                 </div>
             </div>
-            <div className="inputField">
+            <div className="progressbar">
                 <progress
                     id="progress-bar"
                     min="0"

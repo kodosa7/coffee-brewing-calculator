@@ -2,7 +2,7 @@ import InputField from "./InputField/InputField";
 
 const CoffeeYield = (props) => {
     return (
-        <div className="inputField">
+        <div className="input">
             <InputField
                 fieldName="Coffee yield"
                 fieldUnit="ml"

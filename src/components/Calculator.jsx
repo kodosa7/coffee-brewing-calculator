@@ -44,7 +44,7 @@ const Calculator = () => {
     };
 
     return (
-        <div className="inputFieldWrapper">
+        <div className="">
             <CoffeeBeans
                 onChange={ calculateCoffeeBeans }
                 value={ coffeeBeans }
