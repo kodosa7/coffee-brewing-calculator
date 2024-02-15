@@ -21,24 +21,37 @@ input {
     border-radius: 5px 0 0 5px;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 0.2fr 0.2fr; 
+    gap: 1rem 1rem; 
+    grid-template-areas: 
+      "inputField inputField inputField inputField"
+      "timer timer timer ."; 
+    border: 2px solid tomato;
+}
+
 .inputFieldWrapper {
+    grid-area: inputField;
     display: flex;
-    flex-direction: row;
 }
 
 .inputField {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    /* justify-content: flex-end; */
     padding: .5rem;
+    border: 2px solid violet;
 }
 
 /* .inputField__around {
     border: 2px solid red;
-}
+} */
 
 .inputField__label {
     border: 2px solid red;
-} */
+}
 
 .inputField__field {
     display: flex;
@@ -54,4 +67,76 @@ input {
     border-right: 1px solid ;
     border-bottom: 1px solid ;
     border-radius: 0 5px 5px 0;
+}
+
+.progress__wrapper {
+    grid-area: progressbar;
+}
+
+progress[value] {
+    border: none;
+    height: 3rem;
+}
+progress[value]::-webkit-progress-value {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+progress::-moz-progress-bar { background: #007bff; }
+progress::-webkit-progress-value { background: #007bff; }
+
+.timer__wrapper {
+    grid-area: timer;
+    /* display: flex; */
+    /* align-items: end; */
+    /* justify-content: left; */
+    border: 2px solid lime;
+}
+
+.time_buttons__wrapper {
+    grid-area: timer;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: right; */
+    border: 1px solid green;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+}
+
+.time__wrapper {
+    border: 2px solid red;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: left; */
+}
+
+.buttons__wrapper {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: right; */
+}
+
+button {
+    border: 0;
+    padding: .5rem;
+}
+
+.start {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.stop {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.reset {
+    color: #fff;
+    background-color: #343a40;
 }

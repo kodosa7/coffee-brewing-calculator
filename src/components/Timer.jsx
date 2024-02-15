@@ -23,87 +23,90 @@ const Timer = () => {
     const handleCountdown = (e) => {
         if (e.target.value < 0) {
             e.target.value = 0
-        }
+        };
 
         setCountdown(e.target.value);
         setIsRunning(false);
         setTime(e.target.value * 60);
-        console.log(countdown, time)
-    }
+        console.log(countdown, time);
+    };
 
     const handleStartButton = () => {
         console.log("Start button pressed");
         setIsRunning(true);
-    }
+    };
 
     const handleStopButton = () => {
         console.log("Stop button pressed");
         setIsRunning(false);
-    }
+    };
 
     const handleResetButton = () => {
         console.log("Reset button pressed");
         setIsRunning(false);
         setTime(countdown * 60);
-        setCountdown()
-    }
+    };
 
     return (
-        <div className="inputField__around">
-            <div className="inputField__label">
-                <label htmlFor="field">Timer</label>
+        <div className="timer__wrapper">
+                <div className="inputField__label">
+                    <label htmlFor="field">Timer</label>
+                </div>
+            <div className="inputField">
+                <div className="inputField__field">
+                    <input
+                        type="number"
+                        id="timer"
+                        name="timer"
+                        step=".5"
+                        required
+                        value={ countdown }
+                        onChange={ handleCountdown }
+                    />
+                    <div className="inputField__unit">
+                        min
+                    </div>
+                </div>
             </div>
-            <div className="inputField__field">
-                <input
-                    type="number"
-                    id="timer"
-                    name="timer"
-                    step=".5"
-                    required
-                    value={ countdown }
-                    onChange={ handleCountdown }
-                />
-                <div className="inputField__unit">
-                    min
-                </div>
-                <div>
-                    {
-                        `${String(Math.floor(time / 60))}:${String(Math.floor(time % 60)).padStart(2, '0')}`
-                    }
-                </div>
+            <div className="inputField">
+                <div className="time_buttons__wrapper">
 
-                <div>
-                    <button
-                        className="startButton"
-                        onClick={ handleStartButton }
-                    >
-                        Start
-                    </button>
-                    <button
-                        className="stopButton"
-                        onClick={ handleStopButton }
-                    >
-                        Stop
-                    </button>
-                    <button
-                        className="resetButton"
-                        onClick={ handleResetButton }
-                    >
-                        Reset
-                    </button>
-                </div>
-                
-                <div>
-                    <progress
-                        id="progress-bar"
-                        // max="0"
-                        value={ time }
-                        onChange={e => setCountdown(e.target.value)}
-                    >
-                        
-                    </progress>
-                </div>
+                    <div className="time__wrapper">
+                        {
+                            `${String(Math.floor(time / 60))}:${String(Math.floor(time % 60)).padStart(2, '0')}`
+                        }
+                    </div>
 
+                    <div className="buttons__wrapper">
+                        <button
+                            className="start"
+                            onClick={ handleStartButton }
+                        >
+                            Start
+                        </button>
+                        <button
+                            className="stop"
+                            onClick={ handleStopButton }
+                        >
+                            Stop
+                        </button>
+                        <button
+                            className="reset"
+                            onClick={ handleResetButton }
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div className="inputField">
+                <progress
+                    id="progress-bar"
+                    min="0"
+                    max={ countdown * 60 }
+                    value={ (countdown * 60) - time }
+                >
+                </progress>
             </div>
         </div>
     );

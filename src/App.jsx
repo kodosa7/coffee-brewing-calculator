@@ -6,8 +6,10 @@ export default function App() {
     return (
         <main>
             <Header />
-            <Calculator />
-            <Timer />
+            <div className="container">
+                <Calculator />
+                <Timer />
+            </div>
         </main>
     );
 };
