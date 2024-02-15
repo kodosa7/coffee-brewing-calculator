@@ -44,7 +44,7 @@ const Calculator = () => {
     };
 
     return (
-        <div className="">
+        <>
             <CoffeeBeans
                 onChange={ calculateCoffeeBeans }
                 value={ coffeeBeans }
@@ -61,7 +61,7 @@ const Calculator = () => {
                 onChange={ calculateCoffeeYield }
                 value={ coffeeYield }
             />
-        </div>
+        </>
     );
 };
 

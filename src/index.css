@@ -1,14 +1,16 @@
 * {
-    margin: 0 auto;
+    margin: 0;
 }
 
 body {
-    font-family: "Segoe UI Semibold", Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI Regular", Arial, Helvetica, sans-serif;
+    font-size: .9rem;
     color: #212529;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
+    margin: .5rem 0;
 }
 
 main {
@@ -18,38 +20,69 @@ main {
 input {
     padding: .5rem;
     border: 1px solid green;
-    border-radius: 5px 0 0 5px;
+    border-radius: 3px 0 0 3px;
+    width: 100%;
+    margin: .5rem 0;
 }
 
-.container {
+.grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr; 
     grid-template-rows: 0.2fr 0.2fr; 
     gap: 1rem 1rem; 
-    grid-template-areas: 
-      "input input input input"
-      "input timer timer progressbar"; 
-    border: 2px solid tomato;
 }
 
 .input {
-    grid-area: input;
     display: flex;
 }
 
+.input-value {
+    display: flex;
+    align-items: center;
+}
+
+.input-unit {
+    background: #e9ecef;
+    padding: .4rem 1rem;
+    border-top: 1px solid green;
+    border-right: 1px solid green;
+    border-bottom: 1px solid green;
+    border-radius: 0 3px 3px 0;
+}
+
+.timer-space {
+    display: flex;
+    flex-direction: column;
+}
+
 .timer {
-    grid-area: timer;
+    grid-column-end: span 2;  /* occupy 2 columns */
+    display: flex;
+    align-items: center;
+}
+
+.timer-display {
+    border: 1px solid green;
+    border-radius: 3px;
+    background: #e9ecef;
+}
+
+.timer-buttons {
     display: flex;
 }
 
 .progressbar {
-    grid-area: progressbar;
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: .5rem;
 }
 
+/* progress element custom styling */
 progress[value] {
     border: none;
-    height: 3rem;
+    height: 2.1rem;
+    width: 100%;
 }
 progress[value]::-webkit-progress-value {
     background-color: #007bff;
@@ -64,22 +97,29 @@ progress[value]::-webkit-progress-bar {
 progress::-moz-progress-bar { background: #007bff; }
 progress::-webkit-progress-value { background: #007bff; }
 
+/* buttons */
 button {
-    border: 0;
-    padding: .5rem;
+    padding: .55rem;
 }
 
 .start {
     color: #fff;
     background-color: #28a745;
+    margin: .1rem 0 0 1rem;
+    border: 0;
 }
 
 .stop {
     color: #fff;
     background-color: #dc3545;
+    margin: .1rem 0 0 0;
+    border: 0;
 }
 
 .reset {
     color: #fff;
     background-color: #343a40;
+    border-radius: 0 3px 3px 0;
+    margin: .1rem 0 0 0;
+    border: 0;
 }

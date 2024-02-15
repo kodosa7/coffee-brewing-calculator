@@ -6,7 +6,7 @@ export default function App() {
     return (
         <main>
             <Header />
-            <div className="container">
+            <div className="grid-container">
                 <Calculator />
                 <Timer />
             </div>

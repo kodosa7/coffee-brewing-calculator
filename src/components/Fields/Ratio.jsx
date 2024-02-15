@@ -2,7 +2,7 @@ import InputField from "./InputField/InputField";
 
 const Ratio = (props) => {
     return (
-        <div className="input">
+        <div className="ratio">
             <InputField
                 fieldName="Ratio"
                 fieldUnit=":&nbsp;1"

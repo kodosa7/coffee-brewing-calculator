@@ -48,12 +48,12 @@ const Timer = () => {
     };
 
     return (
-        <div className="">
-            <div className="input">
+        <>
+            <div className="">
                 <div className="">
                     <label htmlFor="field">Timer</label>
                 </div>
-                <div className="">
+                <div className="input-value">
                     <input
                         type="number"
                         id="timer"
@@ -63,21 +63,32 @@ const Timer = () => {
                         value={ countdown }
                         onChange={ handleCountdown }
                     />
-                    <div className="">
+                    <div className="input-unit">
                         min
                     </div>
                 </div>
             </div>
             <div className="timer">
-                <div className="">
-
-                    <div className="">
-                        {
+                <div className="timer-col">
+                    <div className="white-space">
+                        <label htmlFor="timer-disp">&nbsp;</label>
+                    </div>
+                    
+                    <input className="timer-display"
+                        id="timer-disp"
+                        name="timer-disp"
+                        value={
                             `${String(Math.floor(time / 60))}:${String(Math.floor(time % 60)).padStart(2, '0')}`
                         }
+                    />
+
+                </div>
+                <div className="buttons-col">
+                    <div className="white-space">
+                        <label htmlFor="timer-disp">&nbsp;</label>
                     </div>
 
-                    <div className="">
+                    <div className="timer-buttons">
                         <button
                             className="start"
                             onClick={ handleStartButton }
@@ -100,6 +111,9 @@ const Timer = () => {
                 </div>
             </div>
             <div className="progressbar">
+                <div className="white-space">
+                        <label htmlFor="timer-disp">&nbsp;</label>
+                    </div>
                 <progress
                     id="progress-bar"
                     min="0"
@@ -108,7 +122,7 @@ const Timer = () => {
                 >
                 </progress>
             </div>
-        </div>
+        </>
     );
 };
 
