@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import TimerInputField from "./Fields/InputField/TimerInputField";
 
 const Timer = () => {
     const [time, setTime] = useState(600);
@@ -49,7 +50,7 @@ const Timer = () => {
     return (
         <>
             <div className="row row-gap-3">
-                <div className="col-md">
+                {/* <div className="col-md">
                     <div className="form-label">
                         <label htmlFor="field">Timer</label>
                     </div>
@@ -67,7 +68,12 @@ const Timer = () => {
                         />
                         <span className="input-group-text">min</span>
                     </div>
-                </div>
+                </div> */}
+                
+                <TimerInputField
+                    countdown={ countdown }
+                    handleCountdown={ handleCountdown }
+                />
 
                 <div className="col-md-6 d-flex align-items-end">
                     <div className="input-group">
