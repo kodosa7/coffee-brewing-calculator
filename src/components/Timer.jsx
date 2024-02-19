@@ -4,26 +4,24 @@ const Timer = () => {
     const [time, setTime] = useState(600);
     const [isRunning, setIsRunning] = useState(false);
     const [countdown, setCountdown] = useState(10);
-    
 
     useEffect(() => {
         let timer;
         if (isRunning && time > 0) {
-                timer = setInterval(() => {
-                    setTime((prevTime) => prevTime - 1);
+            timer = setInterval(() => {
+                setTime((prevTime) => prevTime - 1);
             }, 1000);
-        };
+        }
 
         return () => {
             clearInterval(timer);
         };
     }, [isRunning, time]);
 
-
     const handleCountdown = (e) => {
         if (e.target.value < 0) {
-            e.target.value = 0
-        };
+            e.target.value = 0;
+        }
 
         setCountdown(e.target.value);
         setIsRunning(false);
@@ -49,78 +47,64 @@ const Timer = () => {
 
     return (
         <>
-            <div className="">
-                <div className="">
-                    <label htmlFor="field">Timer</label>
-                </div>
-                <div className="input-value">
-                    <input
-                        type="number"
-                        id="timer"
-                        name="timer"
-                        step=".5"
-                        required
-                        value={ countdown }
-                        onChange={ handleCountdown }
-                    />
-                    <div className="input-unit">
-                        min
+            <div className="row">
+                <div className="col-md">
+                    <div className="form-label">
+                        <label htmlFor="field">Timer</label>
+                    </div>
+                    <div className="input-group">
+                        <input
+                            className="form-control"
+                            type="number"
+                            id="timer"
+                            name="timer"
+                            step=".5"
+                            required
+                            value={countdown}
+                            onChange={handleCountdown}
+                        />
+                        <span className="input-group-text">min</span>
                     </div>
                 </div>
-            </div>
-            <div className="timer">
-                <div className="timer-col">
-                    <div className="white-space">
-                        <label htmlFor="timer-disp">&nbsp;</label>
-                    </div>
-                    
-                    <input className="timer-display"
-                        id="timer-disp"
-                        name="timer-disp"
-                        value={
-                            `${String(Math.floor(time / 60))}:${String(Math.floor(time % 60)).padStart(2, '0')}`
-                        }
-                    />
 
-                </div>
-                <div className="buttons-col">
-                    <div className="white-space">
-                        <label htmlFor="timer-disp">&nbsp;</label>
-                    </div>
+                <div className="col-md-6 d-flex align-items-end">
+                    <div className="input-group">
+                        <input
+                            className="form-control"
+                            id="timer-disp"
+                            name="timer-disp"
+                            readOnly
+                            value={`${String(Math.floor(time / 60))}:${String(Math.floor(time % 60)).padStart(2, "0")}`}
+                        />
 
-                    <div className="timer-buttons">
-                        <button
-                            className="start"
-                            onClick={ handleStartButton }
-                        >
+                        <button className="btn btn-success" onClick={handleStartButton}>
                             Start
                         </button>
-                        <button
-                            className="stop"
-                            onClick={ handleStopButton }
-                        >
+                        <button className="btn btn-danger" onClick={handleStopButton}>
                             Stop
                         </button>
-                        <button
-                            className="reset"
-                            onClick={ handleResetButton }
-                        >
+                        <button className="btn btn-dark" onClick={handleResetButton}>
                             Reset
                         </button>
                     </div>
                 </div>
-            </div>
-            <div className="progressbar">
-                <div className="white-space">
-                        <label htmlFor="timer-disp">&nbsp;</label>
+
+                <div className="col-md d-flex align-items-end">
+                    <div
+                        className="progress w-100"
+                        role="progressbar"
+                        aria-label="Progress bar"
+                        aria-valuenow={ countdown * 60 - time }
+                        aria-valuemin="0" aria-valuemax={ countdown * 60 }
+                        style={{ "--bs-progress-height": "2.3rem" }}
+                    >
+                        <div
+                            className="progress-bar bg-#0075ff"
+                            style={{ width: `calc(${ countdown * 60 - time } / ${ countdown * 60 } * 100%)` }}>
+                        </div>
                     </div>
-                <progress
-                    id="progress-bar"
-                    min="0"
-                    max={ countdown * 60 }
-                    value={ (countdown * 60) - time }
-                >
-                </progress>
+                </div>
+
             </div>
         </>
     );

@@ -5,8 +5,8 @@ import Timer from "./components/Timer";
 export default function App() {
     return (
         <main>
-            <Header />
-            <div className="grid-container">
+            <div className="container">
+                <Header />
                 <Calculator />
                 <Timer />
             </div>

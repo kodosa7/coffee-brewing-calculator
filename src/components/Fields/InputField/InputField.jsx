@@ -1,31 +1,29 @@
 const InputField = (props) => {
-    
     const fieldName = props.fieldName;
     const fieldUnit = props.fieldUnit;
 
-    const handleInputValue = e => {
+    const handleInputValue = (e) => {
         props.onValueChange(e.target.value);
     };
 
     return (
-        <div className="">
-            <div className="">
-                <label htmlFor="field">{ fieldName }</label>
-            </div>
-            <div className="input-value">
+        <>
+            <label className="form-label" htmlFor="field">
+                {fieldName}
+            </label>
+            <div className="input-group">
                 <input
+                    className="form-control"
                     type="number"
                     id="field"
                     name="field"
                     required
-                    value={ props.value }
-                    onChange={ handleInputValue }
+                    value={props.value}
+                    onChange={handleInputValue}
                 />
-                <div className="input-unit">
-                    { fieldUnit }
-                </div>
+                <span className="input-group-text">{fieldUnit}</span>
             </div>
-        </div>
+        </>
     );
 };
 

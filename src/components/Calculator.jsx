@@ -44,24 +44,32 @@ const Calculator = () => {
     };
 
     return (
-        <>
+        <div className="row">
+            <div className="col-md">
             <CoffeeBeans
                 onChange={ calculateCoffeeBeans }
                 value={ coffeeBeans }
             />
+            </div>
+            <div className="col-md">
             <Water
                 onChange={ calculateWater }
                 value={ water }
             />
+            </div>
+            <div className="col-md">
             <Ratio
                 onChange={ calculateRatio }
                 value={ ratio }
             />
+            </div>
+            <div className="col-md">
             <CoffeeYield
                 onChange={ calculateCoffeeYield }
                 value={ coffeeYield }
             />
-        </>
+            </div>
+        </div>
     );
 };
 
