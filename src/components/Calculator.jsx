@@ -44,7 +44,7 @@ const Calculator = () => {
     };
 
     return (
-        <div className="row">
+        <div className="row row-gap-2 mb-4">
             <div className="col-md">
             <CoffeeBeans
                 onChange={ calculateCoffeeBeans }
