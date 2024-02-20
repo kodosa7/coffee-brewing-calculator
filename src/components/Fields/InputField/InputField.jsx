@@ -23,6 +23,12 @@ const InputField = (props) => {
                 />
                 <span className="input-group-text">{fieldUnit}</span>
             </div>
+            <input
+                className="form-range"
+                type="range" id="field"
+                value={props.value}
+                onChange={handleInputValue}
+            />
         </>
     );
 };
