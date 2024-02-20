@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import TimerInputField from "./Fields/InputField/TimerInputField";
 import TimerAndButtons from "./Fields/TimerAndButtons";
 import ProgressBar from "./Fields/ProgressBar";
+import Daytime from "./Fields/Daytime";
 
 const Timer = () => {
     const [time, setTime] = useState(600);
@@ -64,6 +65,7 @@ const Timer = () => {
                     seconds={ countdown * 60 }
                     time={ time }
                 />
+                <Daytime time={ time } />
             </div>
         </>
     );
