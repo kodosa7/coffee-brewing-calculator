@@ -27,6 +27,8 @@ const InputField = (props) => {
                 className="form-range"
                 type="range" id="field"
                 value={props.value}
+                min="0"
+                max={props.maxValue}
                 onChange={handleInputValue}
             />
         </>

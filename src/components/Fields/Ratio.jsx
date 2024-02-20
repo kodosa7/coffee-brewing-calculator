@@ -8,6 +8,7 @@ const Ratio = (props) => {
                 fieldUnit=": 1"
                 value={ props.value }
                 onValueChange={ props.onChange }
+                maxValue="50"
             />
         </div>
     );

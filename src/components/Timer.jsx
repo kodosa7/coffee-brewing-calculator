@@ -7,7 +7,6 @@ const Timer = () => {
     const [time, setTime] = useState(600);
     const [isRunning, setIsRunning] = useState(false);
     const [countdown, setCountdown] = useState(10);
-    const [seconds, setSeconds] = useState(countdown * 60);
 
     useEffect(() => {
         let timer;
@@ -35,7 +34,6 @@ const Timer = () => {
     const handleStartButton = () => {
         console.log("Start button pressed");
         setIsRunning(true);
-        setSeconds(countdown * 60);
     };
 
     const handleStopButton = () => {
@@ -46,7 +44,7 @@ const Timer = () => {
     const handleResetButton = () => {
         console.log("Reset button pressed");
         setIsRunning(false);
-        setTime(seconds);
+        setTime(countdown * 60);
     };
 
     return (
@@ -63,7 +61,7 @@ const Timer = () => {
                     handleResetButton={ handleResetButton }
                 />
                 <ProgressBar
-                    seconds={ seconds }
+                    seconds={ countdown * 60 }
                     time={ time }
                 />
             </div>

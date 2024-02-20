@@ -8,6 +8,7 @@ const CoffeeBeans = (props) => {
                 fieldUnit="g"
                 value={ props.value }
                 onValueChange={ props.onChange }
+                maxValue="100"
             />
         </div>
     );
