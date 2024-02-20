@@ -5,7 +5,7 @@ const Ratio = (props) => {
         <div className="">
             <InputField
                 fieldName="Ratio"
-                fieldUnit=":&nbsp;1"
+                fieldUnit=": 1"
                 value={ props.value }
                 onValueChange={ props.onChange }
             />
