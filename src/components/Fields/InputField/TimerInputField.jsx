@@ -16,8 +16,8 @@ const TimerInputField = (props) => {
                     step=".5"
                     min="0"
                     required
-                    value={countdown}
-                    onChange={handleCountdown}
+                    value={ countdown }
+                    onChange={ handleCountdown }
                 />
                 <span className="input-group-text">min</span>
             </div>

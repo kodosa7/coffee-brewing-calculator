@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import TimerInputField from "./Fields/InputField/TimerInputField";
 import TimerAndButtons from "./Fields/TimerAndButtons";
 import ProgressBar from "./Fields/ProgressBar";
-import Daytime from "./Fields/Daytime";
 
 const Timer = () => {
     const [time, setTime] = useState(600);
@@ -49,25 +48,22 @@ const Timer = () => {
     };
 
     return (
-        <>
-            <div className="row row-gap-3">
-                <TimerInputField
-                    countdown={ countdown }
-                    handleCountdown={ handleCountdown }
-                />
-                <TimerAndButtons 
-                    time={ time }
-                    handleStartButton={ handleStartButton }
-                    handleStopButton={ handleStopButton }
-                    handleResetButton={ handleResetButton }
-                />
-                <ProgressBar
-                    seconds={ countdown * 60 }
-                    time={ time }
-                />
-                <Daytime time={ time } />
-            </div>
-        </>
+        <div className="row">
+            <TimerInputField
+                countdown={ countdown }
+                handleCountdown={ handleCountdown }
+            />
+            <TimerAndButtons 
+                time={ time }
+                handleStartButton={ handleStartButton }
+                handleStopButton={ handleStopButton }
+                handleResetButton={ handleResetButton }
+            />
+            <ProgressBar
+                seconds={ countdown * 60 }
+                time={ time }
+            />
+        </div>
     );
 };
 

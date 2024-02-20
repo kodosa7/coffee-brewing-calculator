@@ -9,7 +9,7 @@ const InputField = (props) => {
     return (
         <>
             <label className="form-label" htmlFor="field">
-                {fieldName}
+                { fieldName }
             </label>
             <div className="input-group">
                 <input
@@ -18,18 +18,18 @@ const InputField = (props) => {
                     id="field"
                     name="field"
                     required
-                    value={props.value}
-                    onChange={handleInputValue}
+                    value={ props.value }
+                    onChange={ handleInputValue }
                 />
-                <span className="input-group-text">{fieldUnit}</span>
+                <span className="input-group-text">{ fieldUnit }</span>
             </div>
             <input
                 className="form-range"
                 type="range" id="field"
-                value={props.value}
+                value={ props.value }
                 min="0"
-                max={props.maxValue}
-                onChange={handleInputValue}
+                max={ props.maxValue }
+                onChange={ handleInputValue }
             />
         </>
     );

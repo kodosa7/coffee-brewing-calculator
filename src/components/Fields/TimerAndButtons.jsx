@@ -15,13 +15,13 @@ const TimerAndButtons = (props) => {
                     value={`${String(Math.floor(time / 60))}:${String(Math.floor(time % 60)).padStart(2, "0")}`}
                 />
 
-                <button className="btn btn-success" onClick={handleStartButton}>
+                <button className="btn btn-success" onClick={ handleStartButton }>
                     Start
                 </button>
-                <button className="btn btn-danger" onClick={handleStopButton}>
+                <button className="btn btn-danger" onClick={ handleStopButton }>
                     Stop
                 </button>
-                <button className="btn btn-dark" onClick={handleResetButton}>
+                <button className="btn btn-dark" onClick={ handleResetButton }>
                     Reset
                 </button>
             </div>
